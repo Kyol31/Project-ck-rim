@@ -1,0 +1,598 @@
+*{
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: 'BalkaraFreeCondensed';
+	src: url('../fonts/BalkaraFreeCondensed.ttf') format('truetype');
+}
+@font-face{
+	font-family: 'Vezitsa';
+	src: url('../fonts/ofont.ru_Vezitsa.ttf') format('truetype');
+}
+a {
+    background-color: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+a:hover {
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'BalkaraFreeCondensed';
+}
+body,html{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Roboto, sans-serif;
+	overflow-x: hidden;
+}
+ul{
+	margin: 0;
+	padding: 0;
+}
+/*navbar visual settings*/
+header{
+	width: 60px;
+	display: flex;
+	justify-content: flex-end;
+	position: fixed;
+	z-index: 4;
+	top: 1%;
+	right: 1%;
+	background-color: rgb(221, 221, 221,0.5);
+	border-radius: 12px;
+}
+/*button\navbar settings*/
+.menu-btn{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	z-index: 4;
+	overflow: hidden;
+	cursor: pointer;
+}
+.menu-btn span{
+	width: 50px;
+	height: 4px;
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	transform: translate(-50%,-50%);
+	background-color: #222222;
+	transition: all 0.5s;
+}
+.menu-btn span:nth-of-type(2) {
+	top: calc(50% - 10px);
+}
+.menu-btn span:nth-of-type(3) {
+	top: calc(50% + 10px);
+}
+.menu-btn.active span{
+	background-color: #ffffff;
+}
+.bg-menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,0.4);
+	opacity: 0;
+	transition: 0.3s all;
+	pointer-events: none;
+	z-index: 1;
+}
+.bg-menu.active{
+	pointer-events: all;
+	opacity: 1;
+	transition: 0.3s all;
+}
+.menu{
+	position: fixed;
+	z-index: 2;
+	top: 0%;
+	right: 0;
+	width: 16%;
+	height: 100vh;
+	padding: 15px;
+  	background: #222222;
+	transform: translateX(100%);
+	transition: transform 0.5s; 
+}
+.menu.active {
+	transform: translateX(0);
+}
+.menu nav{
+	padding-top: 60px;
+}
+.menu li {
+	font-family: 'BalkaraFreeCondensed';
+	list-style-type: none;
+	color: #fff;
+	padding: 6px 0;
+}
+.menu li:hover{
+	color: #c32f2f;
+}
+/*settings main w+h*/
+main{
+	width: 100%;
+}
+/*начальный слайд*/
+.wrapper-title{
+	width: 100%;
+	height: 100vh;
+	background: url(../img/ioris-van-der-khagen-joris-van-der-haagen-peizazh-s-kreposti.jpg);
+	background-size: cover;
+/*	background-attachment: fixed;*/
+	position: relative;
+	z-index: 2;
+}
+/*Блок темы + параметры*/
+.title{
+	width: 650px;
+	position: absolute;
+	top: 60%;
+	left: 24%;
+	transform: translate(-50%,-50%);
+	color:#4e3333;
+	font-family: 'BalkaraFreeCondensed';
+}
+.title h2{
+	margin: 0;
+	font-size: 44px;
+	font-weight: 300;
+}
+/*родитель блоков-секций*/
+.section-wrapper{
+	width: 100%;
+	height: 100%;
+	background: url(../img/back-main.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+/*	background-color:#e1c89f;*/
+}
+/*блоки-секции с контентом*/
+.section_block-multi{
+	padding-top: 26px;
+	width: 360px;
+	height: 1200px;
+}
+.section__block-first{
+	width: 1200px;
+	height: 1880px;
+	margin: 0 auto;
+	background-color:#e6d3b4;
+}
+.section__block-first .section_block-multi{
+	padding-top: 26px;
+	width: 360px;
+	height: 500px;
+}
+.section__block-second{
+	width: 1200px;
+	height: 1840px;
+	margin: 0 auto;
+	background-color:#e6d3b4;
+}
+.section__block-paradise{
+	width: 1200px;
+	height: 600px;
+	margin: 0 auto;
+	background-color:#e6d3b4;
+}
+.section__block-third{
+	padding-top: 20px;
+	width: 1200px;
+	height: 3430px;
+	margin: 0 auto;
+	background-color:#e6d3b4;
+}
+.section__block-third .section_block-multi{
+	height: 530px;
+	width: 800px;
+}
+.section_block-multi_line{
+	height: 530px;
+	width: 900px;
+	display: flex;
+	justify-content: space-between;
+}
+.section__block-nether{
+	width: 1200px;
+	height: 660px;
+	margin: 0 auto;
+	background-color:#e6d3b4;
+}
+.section__block-fourth{
+	padding-top: 20px;
+	width: 1200px;
+	height: 800px;
+	margin: 0 auto;
+	background-color:#e6d3b4;
+}
+.section__block-bibliografia{
+	padding-top: 20px;
+	width: 1200px;
+	height: 1100px;
+	margin: 0 auto;
+	background-color:#e6d3b4;
+}
+/*верхний заголовок блоков секций*/
+.section-wrapper h1{
+	margin: 0;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-size: 36px;
+}
+..section__block-container-first__footer h2{
+	padding-left: 0px;
+}
+/*контейнер двух блоков текста и картинки, чтобы было ровно*/
+.section__block-container-first__footer{
+	padding-left: 44px;
+}
+.section__block-container-first__main{
+	display: flex;
+	justify-content: space-around;
+	height: 440px;
+}
+.section__block-container{
+	display: flex;
+	justify-content: space-around;
+	position: relative;
+}
+/*блок текста*/
+.section__block-text{
+	width: 680px;
+}
+.section__block-first .section__block-container .section__block-text{
+	width: 680px;
+	height: 400px;
+}
+.section__block-first .section__block-container-first__footer .section__block-text{
+	width: 97%;
+}
+.section__block-paradise .section__block-text{
+	width: 800px;
+	height: 500px;
+}
+.section__block-third .section__block-text{
+	width: 800px;
+}
+.section__block-third .section__block-text .stih:nth-child(2){
+	padding: 0;
+}
+.section__block-text .stih{
+	text-align: left;
+	padding-left: 200px;
+}
+.section__block-fourth .section__block-text{
+	width: 600px;
+	padding: 0 30px;
+}
+.section__block-bibliografia .section__block-text{
+	width: 600px;
+	padding: 0 30px;
+}
+/*блок текста -- параметры текста*/
+.section__block-text p{
+	font-size: 22px;
+	text-indent: 20px;
+}
+.section__block-text li{
+	padding: 0;
+	padding-bottom: 10px;
+	font-size: 22px;
+}
+.section__block-text ol{
+	padding-left: 20px;
+}
+.section__block-text h2{
+	padding-left: 24px;
+}
+.section__block-text h4{
+	padding-left: 24px;
+}
+.section__block-text h3{
+	text-align: center;
+}
+.section_block-multi .section__block-text p{
+	width: 360px;
+	padding: 0 0px;
+	text-indent: 0px;
+	font-size: 16px;
+}
+.section_block-multi ul{
+	padding-top: 10px;
+	line-height: 25px;
+	padding-left: 16px;
+}
+.stih{
+	font-size: 22px;
+	font-family: 'Vezitsa';
+}
+.stih span:nth-of-type(even){
+	padding-left: 30px;
+}
+/*Заливка в стихе*/
+.fill-block{
+	position: absolute;
+	background-color: rgb(255, 245, 0,0.3);
+}
+.fill-first{
+	top: 0;
+	left: 60px;
+	height: 50px;
+	width: 460px;
+}
+.fill-second{
+	top: 340px;
+	right: 100px;
+	height: 30px;
+	width: 240px;
+}
+/*блок текста -- параметры текста*/
+.section__block-third .section_block-multi .section__block-text p{
+	text-align: center;
+	width: 800px;
+}
+.section__block-second h3{
+	text-align: left;
+
+}
+.section__block-second .section_block-multi .section__block-text li{
+	width: 400px;
+	font-size: 22px;
+}
+.section__block-nether .section__block-text p{
+	font-size: 23px;
+}
+.section__block-third .section__block-text li{
+	padding: 10px 0;
+	list-style-type: none;
+}
+.section__block-fourth .section__block-text h2{
+	text-align: center;
+}
+.section__block-fourth .section__block-text li{
+	font-size: 22px
+}
+.section__block-bibliografia a{
+	color: #2700ff;
+}
+/*
+.section__block-bibliografia .section__block-text{
+	padding: 0 20px;
+}
+*/
+/*блок картинки*/
+.section__block-pic{
+	width: 360px;
+	height: 450px;
+}
+.section__block-first .section_block-multi .section__block-pic{
+	width: 300px;
+	height: 400px;
+}
+.section__block-third .section_block-multi .section__block-pic{
+	width: 800px;
+	padding: 0;
+	margin: 0;
+}
+.section__block-third .section__block-pic{
+	margin: 30px auto 20px auto;
+}
+.section_block-multi_line .section_block-multi{
+	width: 400px;
+}
+.section_block-multi_line .section_block-multi p{
+	text-align: center;
+	font-size: 16px;
+}
+.section_block-multi_line .section_block-multi:nth-child(1) .section__block-pic{
+	width: 460px;
+}
+.section_block-multi_line .section_block-multi:nth-child(2) .section__block-pic{
+	width: 300px;
+}
+/*блок картинки -- параметры картинки*/
+.section__block-pic img{
+	width: 100%;
+	height: 100%;
+}
+/*кнопка узнать более*/
+#discover{
+	margin-left: 100px;
+	margin-top: 20px;
+	width: 200px;
+	height: 50px;
+	background-color: rgb(248, 237, 97,0.3);
+	font-size: 20px;
+}
+/*параметры коллажей*/
+.colageAll{
+	background: url(../img/back-collage.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.colageAll svg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.colageAll img{
+	display: block;
+	margin: 0 auto;
+}
+.collage__paradise img{
+	width: 79%;
+	height: 90%;
+}
+.collage__garden img{
+	width: 70%;
+	height: 70%;
+}
+.collage__nether img{
+	width: 79%;
+	height: 80%;
+}
+/*settings svg paths*/
+.padise__item{
+	fill: none;
+	stroke-width:1px;
+	stroke: rgb(255, 255, 255,0.4);
+	cursor: pointer;
+	pointer-events: all;
+	animation: anim-paradise 1.5s infinite ease;
+}
+.nether__item{
+	fill: none;
+	stroke-width:1px;
+	stroke: rgb(255, 255, 255,0.4);
+	cursor: pointer;
+	pointer-events: all;
+	animation: anim-nether 1.5s infinite ease;
+}
+.garden__item{
+	fill: none;
+	stroke-width:1px;
+	stroke: rgb(255, 255, 255,0.4);
+	cursor: pointer;
+	pointer-events: all;
+	animation: anim-garden 1.5s infinite ease;
+}
+@keyframes anim-paradise{
+	0%{ 
+		fill:rgb(4, 217, 245,0.12);
+	}
+	50%{
+		fill:rgb(235, 255, 0,0.15);	
+	}
+	100%{
+		fill:rgb(4, 217, 245,0.12);
+	}
+}
+@keyframes anim-garden{
+	0%{ 
+		fill:rgb(255, 226, 0,0.3);
+	}
+	50%{
+		fill:rgb(144, 30, 30,0.2);
+	}
+	100%{
+		fill:rgb(255, 226, 0,0.3);
+	}
+}
+@keyframes anim-nether{
+	0%{ 
+		fill:rgb(123, 0, 0,0.3);
+	}
+	50%{
+		fill:rgb(0, 0, 0,0.1);
+	}
+	100%{
+		fill:rgb(123, 0, 0,0.3);
+	}
+}
+.padise__item:hover{
+	stroke-width:3px;
+	fill:rgb(121, 121, 121,0.1);
+	stroke: #414141;
+}
+.garden__item:hover{
+	stroke-width:3px;
+	fill:rgb(121, 121, 121,0.1);
+	stroke: #ffffff;
+}
+.nether__item:hover{
+	stroke-width:2px;
+	fill:rgb(121, 121, 121,0.1);
+	stroke: #ffffff;
+}
+/*popup settings*/
+.popup__bg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgb(0, 0, 0,0.5);
+	opacity: 0;
+	transition: 0.3s all;
+	pointer-events: none;
+	z-index: 10;
+}
+.popup__bg.active{
+	pointer-events: all;
+	opacity: 1;
+	transition: 0.3s all;
+}
+.popup{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-image: url(../img/bg_popup.jpg);
+	border-radius: 10px;
+	padding: 25px;
+	width: 680px;
+}
+.popup_title{
+	text-align: center;
+}
+.popup__text{
+	font-size: 24px;
+	font-family: 'Vezitsa';
+	padding-left: 46px;
+	line-height: 32px;
+	margin: 0 auto;
+}
+.popup__text span:nth-of-type(even){
+	padding-left: 30px;	
+}
+/*декор линия отделение блоков*/
+.line{
+	width: 1200px;
+	height: 4px;
+	background-color: #000;
+	margin: 0 auto;
+}
+.line-allScreen{
+	width: 100%;
+	height: 2px;
+	background-color: #000;
+}
+/*top btn*/
+#topBtn{
+	width:100px;
+	border:2px solid #ccc;
+	background:#f7f7f7;
+	text-align:center;
+	padding:10px;
+	position:fixed;
+	z-index: 1;
+	bottom:20px;
+	right:50px;
+	cursor:pointer;
+	color:#333;
+	font-family:verdana;
+	font-size:12px;
+	border-radius: 5px;
+}
+/*Стихи для коллажей*/
+.data-descriptions{
+	display: none;
+}
+footer{
+	height: 24vh;
+	width: 100%;
+	background-color: #424232;
+	display: none;
+}
